@@ -693,22 +693,15 @@ body {
   background: var(--background-light);
   transition: all 0.3s ease;
   border: 1px solid var(--border-color);
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 1.5rem;
 }
 
 .social-icon:hover {
   transform: translateY(-3px);
   background: var(--primary-color);
-}
-
-.social-icon img {
-  width: 24px;
-  height: 24px;
-  filter: grayscale(100%);
-  transition: all 0.3s ease;
-}
-
-.social-icon:hover img {
-  filter: grayscale(0%) brightness(0) invert(1);
+  color: white;
 }
 
 /* Responsive adjustments for Coming Soon section */
@@ -728,11 +721,7 @@ body {
   .social-icon {
     width: 45px;
     height: 45px;
-  }
-  
-  .social-icon img {
-    width: 20px;
-    height: 20px;
+    font-size: 1.3rem;
   }
 }
 
@@ -752,10 +741,6 @@ body {
   .social-icon {
     width: 40px;
     height: 40px;
-  }
-  
-  .social-icon img {
-    width: 18px;
-    height: 18px;
+    font-size: 1.2rem;
   }
 }

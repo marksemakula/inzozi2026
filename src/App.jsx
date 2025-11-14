@@ -1,4 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { 
+  FaDiscord, 
+  FaInstagram, 
+  FaLinkedin, 
+  FaSlack, 
+  FaYoutube, 
+  FaTwitter, 
+  FaWhatsapp, 
+  FaTelegram 
+} from 'react-icons/fa';
 import './App.css';
 
 function App() {
@@ -110,29 +120,29 @@ function App() {
             <p className="making-changes-text">We are making some changes</p>
             <h2 className="coming-soon-text">Coming Soon</h2>
             <div className="social-icons">
-              <a href="#" className="social-icon">
-                <img src="/icons/discord.svg" alt="Discord" />
+              <a href="#" className="social-icon" aria-label="Discord">
+                <FaDiscord />
               </a>
-              <a href="#" className="social-icon">
-                <img src="/icons/instagram.svg" alt="Instagram" />
+              <a href="#" className="social-icon" aria-label="Instagram">
+                <FaInstagram />
               </a>
-              <a href="#" className="social-icon">
-                <img src="/icons/linkedin.svg" alt="LinkedIn" />
+              <a href="#" className="social-icon" aria-label="LinkedIn">
+                <FaLinkedin />
               </a>
-              <a href="#" className="social-icon">
-                <img src="/icons/slack.svg" alt="Slack" />
+              <a href="#" className="social-icon" aria-label="Slack">
+                <FaSlack />
               </a>
-              <a href="#" className="social-icon">
-                <img src="/icons/youtube.svg" alt="YouTube" />
+              <a href="#" className="social-icon" aria-label="YouTube">
+                <FaYoutube />
               </a>
-              <a href="#" className="social-icon">
-                <img src="/icons/x.svg" alt="X" />
+              <a href="#" className="social-icon" aria-label="X (Twitter)">
+                <FaTwitter />
               </a>
-              <a href="#" className="social-icon">
-                <img src="/icons/whatsapp.svg" alt="WhatsApp" />
+              <a href="#" className="social-icon" aria-label="WhatsApp">
+                <FaWhatsapp />
               </a>
-              <a href="#" className="social-icon">
-                <img src="/icons/telegram.svg" alt="Telegram" />
+              <a href="#" className="social-icon" aria-label="Telegram">
+                <FaTelegram />
               </a>
             </div>
           </div>
