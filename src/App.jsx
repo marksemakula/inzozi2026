@@ -117,7 +117,7 @@ function App() {
       <section id="coming-soon" className="coming-soon-section">
         <div className="container">
           <div className="coming-soon-content">
-            <p className="making-changes-text">We are refining your experience here</p>
+            <p className="making-changes-text">We are refining your experience here!</p>
             <h2 className="coming-soon-text">Coming Soon</h2>
             <div className="social-icons">
               <a href="#" className="social-icon" aria-label="Discord">

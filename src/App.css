@@ -656,13 +656,16 @@ body {
   font-style: normal;
 }
 
+/* Updated: Making changes text now uses same style as hero subtitle */
 .making-changes-text {
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-  font-size: 1.5rem;
-  color: var(--text-dark);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-light);
   margin-bottom: 2rem;
-  font-weight: 500;
-  letter-spacing: 0.5px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.9;
 }
 
 .coming-soon-text {
@@ -708,7 +711,7 @@ body {
   }
   
   .making-changes-text {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
   
   .social-icons {
@@ -726,7 +729,7 @@ body {
   }
   
   .making-changes-text {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
   
   .social-icons {
