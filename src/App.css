@@ -636,24 +636,41 @@ body {
 
 /* Coming Soon Section */
 .coming-soon-section {
-  padding: 8rem 0;
+  padding: 4rem 0 3rem 0; /* Increased top padding to push content lower */
   background: var(--background-white);
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 50vh;
+  min-height: 30vh;
 }
 
 .coming-soon-content {
   text-align: center;
+  margin-top: 0; /* Removed negative margin */
+  padding-top: 2rem; /* Added padding to push content down */
 }
 
-/* Arthelo Font */
+/* Logo styling for coming soon section */
+.coming-soon-logo {
+  margin-bottom: 1rem; /* Increased margin */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coming-soon-logo img {
+  max-width: 60px;
+  height: auto;
+  opacity: 0.7;
+}
+
+/* Arthelo Font - Fixed with better fallbacks and font-display */
 @font-face {
   font-family: 'Arthelo';
   src: url('/ArtheloBrush.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap; /* Helps with loading behavior */
 }
 
 /* Updated: Making changes text now uses same style as hero subtitle */
@@ -661,7 +678,7 @@ body {
   font-size: 1.1rem;
   line-height: 1.6;
   color: var(--text-light);
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; /* Increased margin */
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -669,20 +686,20 @@ body {
 }
 
 .coming-soon-text {
-  font-family: 'Arthelo', cursive;
-  font-size: 6rem;
+  font-family: 'Arthelo', 'Brush Script MT', 'cursive'; /* Better fallbacks */
+  font-size: 5rem;
   color: var(--primary-color);
-  margin: 0 0 4rem 0;
+  margin: 0 0 3rem 0; /* Increased margin */
   line-height: 1;
   letter-spacing: 2px;
 }
 
-/* Social Icons - No Circles */
+/* Social Icons - Moved closer to the text */
 .social-icons {
   display: flex;
   justify-content: center;
   gap: 2.5rem;
-  margin-top: 3rem;
+  margin-top: 2.5rem; /* Adjusted margin */
   flex-wrap: wrap;
 }
 
@@ -706,8 +723,17 @@ body {
 
 /* Responsive adjustments for Coming Soon section */
 @media (max-width: 768px) {
+  .coming-soon-section {
+    padding: 3rem 0 2rem 0;
+    min-height: 25vh;
+  }
+  
+  .coming-soon-content {
+    padding-top: 1.5rem;
+  }
+  
   .coming-soon-text {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
   
   .making-changes-text {
@@ -716,16 +742,30 @@ body {
   
   .social-icons {
     gap: 2rem;
+    margin-top: 2rem;
   }
   
   .social-icon {
     font-size: 1.8rem;
   }
+  
+  .coming-soon-logo img {
+    max-width: 50px;
+  }
 }
 
 @media (max-width: 480px) {
+  .coming-soon-section {
+    padding: 2.5rem 0 1.5rem 0;
+    min-height: 20vh;
+  }
+  
+  .coming-soon-content {
+    padding-top: 1rem;
+  }
+  
   .coming-soon-text {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   
   .making-changes-text {
@@ -734,9 +774,14 @@ body {
   
   .social-icons {
     gap: 1.5rem;
+    margin-top: 1.5rem;
   }
   
   .social-icon {
     font-size: 1.6rem;
+  }
+  
+  .coming-soon-logo img {
+    max-width: 40px;
   }
 }
