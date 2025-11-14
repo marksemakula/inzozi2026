@@ -5,10 +5,10 @@ import {
   FaLinkedin, 
   FaSlack, 
   FaYoutube, 
-  FaTwitter, 
   FaWhatsapp, 
   FaTelegram 
 } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import './App.css';
 
 function App() {
@@ -135,8 +135,8 @@ function App() {
               <a href="#" className="social-icon" aria-label="YouTube">
                 <FaYoutube />
               </a>
-              <a href="#" className="social-icon" aria-label="X (Twitter)">
-                <FaTwitter />
+              <a href="#" className="social-icon" aria-label="X">
+                <FaXTwitter />
               </a>
               <a href="#" className="social-icon" aria-label="WhatsApp">
                 <FaWhatsapp />
