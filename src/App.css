@@ -18,6 +18,8 @@
   --background-light: #f8f9fa;
   --background-white: #ffffff;
   --border-color: #e0e0e0;
+  --header-height: 72px;
+  --breadcrumb-height: 34px;
 }
 
 body {
@@ -141,6 +143,61 @@ body {
   background: white;
   margin: 3px 0;
   transition: 0.3s;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb-nav {
+  position: fixed;
+  top: var(--header-height); /* sits directly below the fixed main header */
+  left: 0;
+  width: 100%;
+  z-index: 900;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.4rem 2rem;
+  font-size: 0.82rem;
+  backdrop-filter: blur(4px);
+}
+
+.breadcrumb-list {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 0.35rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--text-light);
+}
+
+.breadcrumb-item a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-item a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  color: var(--text-light);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.breadcrumb-item [aria-current="page"] {
+  color: var(--text-dark);
+  font-weight: 600;
 }
 
 /* Hero Section - Corporate Solid Background - Reduced Height */

@@ -26,7 +26,7 @@ function App() {
       }
 
       // Active section detection
-      const sections = ['home', 'coming-soon'];
+      const sections = ['home', 'analytics', 'legal', 'human-capital', 'brands-comms', 'advisory', 'coming-soon'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -61,7 +61,7 @@ function App() {
             <h1>INZOZI <span>Partners</span></h1>
           </div>
           
-          <nav className={`main-nav ${isMenuOpen ? 'nav-open' : ''}`}>
+          <nav className={`main-nav ${isMenuOpen ? 'nav-open' : ''}`} aria-label="Main navigation">
             <ul>
               <li>
                 <a 
@@ -73,6 +73,66 @@ function App() {
                   }}
                 >
                   Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#analytics"
+                  className={activeSection === 'analytics' ? 'active' : ''}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('analytics');
+                  }}
+                >
+                  Analytics
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#legal"
+                  className={activeSection === 'legal' ? 'active' : ''}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('legal');
+                  }}
+                >
+                  Legal
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#human-capital"
+                  className={activeSection === 'human-capital' ? 'active' : ''}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('human-capital');
+                  }}
+                >
+                  Human Capital
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#brands-comms"
+                  className={activeSection === 'brands-comms' ? 'active' : ''}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('brands-comms');
+                  }}
+                >
+                  Brands &amp; Comms
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#advisory"
+                  className={activeSection === 'advisory' ? 'active' : ''}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('advisory');
+                  }}
+                >
+                  Advisory
                 </a>
               </li>
               <li>
@@ -102,6 +162,55 @@ function App() {
           </button>
         </div>
       </header>
+
+      {/* Breadcrumb Navigation – only shown when inside a sub-section */}
+      {activeSection !== 'home' && (() => {
+        const sectionLabels = {
+          'home': 'Home',
+          'analytics': 'Analytics',
+          'legal': 'Legal',
+          'human-capital': 'Human Capital',
+          'brands-comms': 'Brands & Comms',
+          'advisory': 'Advisory',
+          'coming-soon': 'Coming Soon',
+        };
+        const crumbs = activeSection === 'home'
+          ? [{ label: 'Home', href: '#home' }]
+          : [
+              { label: 'Home', href: '#home' },
+              { label: sectionLabels[activeSection] || activeSection, href: `#${activeSection}` },
+            ];
+        return (
+          <nav className="breadcrumb-nav" aria-label="Breadcrumb">
+            <ol className="breadcrumb-list" itemScope itemType="https://schema.org/BreadcrumbList">
+              {crumbs.map((crumb, index) => (
+                <li
+                  key={crumb.href}
+                  className="breadcrumb-item"
+                  itemProp="itemListElement"
+                  itemScope
+                  itemType="https://schema.org/ListItem"
+                >
+                  {index < crumbs.length - 1 ? (
+                    <>
+                      <a href={crumb.href} itemProp="item" onClick={(e) => { e.preventDefault(); scrollToSection(crumb.href.slice(1)); }}>
+                        <span itemProp="name">{crumb.label}</span>
+                      </a>
+                      <meta itemProp="position" content={String(index + 1)} />
+                      <span className="breadcrumb-separator" aria-hidden="true">›</span>
+                    </>
+                  ) : (
+                    <>
+                      <span itemProp="name" aria-current="page">{crumb.label}</span>
+                      <meta itemProp="position" content={String(index + 1)} />
+                    </>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </nav>
+        );
+      })()}
 
       {/* Hero Section with solid background - Reduced height */}
       <section id="home" className="hero-section">
